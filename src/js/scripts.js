@@ -3,8 +3,8 @@ $(document).ready(function() {
     if (document.documentElement.clientWidth < 768) {
         $('.header-menu__list').hide();
         $('.header-menu__block').on('click', function () {
-                $('.header-menu__list').slideToggle();
-            }
+            $('.header-menu__list').slideToggle();
+        }
         );
         $('.top-section__link').html('Купить билет!');
         $('#subscribe-title').html('Подпишитесь на уникальные предложения');
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     });
 
-    $('#location-link , #location').attr('data-fancybox', '').attr('data-option', '{&quot;iframe&quot; : {&quot;css&quot; : {&quot;width&quot; : &quot;80%&quot;, &quot;height&quot; : &quot;80%&quot;}}}');
+    $('#location-link , .header-icons__location').attr('data-fancybox', '').attr('data-option', '{&quot;iframe&quot; : {&quot;css&quot; : {&quot;width&quot; : &quot;80%&quot;, &quot;height&quot; : &quot;80%&quot;}}}');
     $('b').css('color', '#F59BBB');
 
 });

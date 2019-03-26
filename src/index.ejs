@@ -9,16 +9,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="icon" href="https://redken.ru/skin/frontend/redken/default/img/brews-favicon.ico" type="image/x-icon">
+
 </head>
 <body>
 
 <!-- Header -->
 <header class="header">
+    <div class="container">
     <div class="header-logo">
         <div class="header-logo__container">
             <object class="header-logo__svg" type="image/svg+xml" data="img/logo.svg" width="20%" height="20px">
             </object>
-            <object class="header-logo__svg" type="image/svg+xml" data="img/logo.svg" width="20%" height="20px">
+            <object class="header-logo__svg" type="image/svg+xml" data="img/brews-logo.svg" width="30%" height="35px">
             </object>
         </div>
 
@@ -42,48 +46,46 @@
         </div>
         <ul class="header-menu__list">
             <% menuItems.forEach((item) => { %>
-                <li class="header-menu__item"><a id="<%= item.id; %>" class="header-menu__link"
-                                                 href="<%= item.link; %>"><%= item.title %></a></li>
+                <li class="header-menu__item"><a id="<%= item.id; %>" class="header-menu__link" href="<%= item.link; %>"><%= item.title %></a>
+                </li>
             <% }) %>
         </ul>
     </nav>
 
     <%
     const menuIcons = [
-        {data: 'img/avatar.svg', link: '#', title: ''},
-        {data: 'img/location.svg', link: '#', title: 'location'},
-        {data: 'img/search.svg', link: '#', title: 'search'},
-        {data: 'img/shopping-bag.svg', link: '#', title: ''},
-        {data: 'img/phone-receiver.svg', link: '#', title: 'phone'},
-        {data: 'img/mail.svg', link: '#', title: 'mail'}
+        {link: '#', title: 'header-icons__avatar'},
+        {link: '#', title: 'header-icons__location'},
+        {link: '#', title: 'header-icons__search'},
+        {link: '#', title: 'header-icons__shopping-bag'},
+        {link: '#', title: 'header-icons__phone'},
+        {link: '#', title: 'header-icons__mail'}
     ];
     %>
 
     <ul class="header-icons">
         <% menuIcons.forEach((icon) => { %>
             <li id="<%= icon.title; %>" class="header-icons__item">
-                <a class="header-icons__link" href="#">
-                    <img class="header-icons__svg" src="<%= icon.data; %>" alt="">
-                </a>
+                <a class="<%= icon.title; %> header-icons__link" href="<%= icon.link; %>"></a>
+
             </li>
         <% }) %>
 
     </ul>
 
     <form action="" class="search">
-        <label for="search-button"></label>
         <input type="checkbox" id="search-button" class="search__button">
-        <label class="search__button-toggle" for="search__button"> </label>
-        <label>
+        <label class="search__button-toggle" for="search-button"> </label>
             <input class="search__field " type="text">
-        </label>
-    </form>
 
+    </form>
+    </div>
 </header>
 
 
 <section class="top-section">
     <div class="top-section__content">
+        <div class="container">
         <div class="top-section__container">
             <h4 class="top-section__sub">Такое нельзя пропустить!</h4>
             <h1 class="top-section__title">Shades eq celebration</h1>
@@ -103,10 +105,13 @@
                 <img class="section-images__item" src="<%= item.src; %>" alt="">
             <% }) %>
         </div>
+        </div>
     </div>
 </section>
 <section class="second-section">
+
     <div class="second-section__content">
+        <div class="container">
         <div class="second-section__container">
 
             <h2 class="second-section__title">Shades eq celebration</h2>
@@ -146,7 +151,9 @@
             <h1 class="section-form__text ">19:00</h1>
             <a class="top-section__link top-section__link_display " href="#"></a>
 
-        </div>
+
+    </div>
+
         <%
         const secondSectionImg = [
             {src: 'img/girl1.png'},
@@ -192,6 +199,7 @@
                 </p>
             </div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -271,7 +279,7 @@ const footerList7 = [
 %>
 
 <footer class="footer">
-
+<div class="container">
     <div class="footer-list">
         <h4 class="footer-list__title">Уход за волосами</h4>
         <ul class="footer-list__container">
@@ -383,9 +391,9 @@ const footerList7 = [
         </div>
 
         <div class="footer-icons footer-icons_indent">
-            <object class="footer-icons__svg" type="image/svg+xml" data="img/western-union.svg" width="100%" height="100%">
+            <object class="footer-icons__logo" type="image/svg+xml" data="img/footer_mnogoru_v3.webp" width="110px" height="50px">
             </object>
-            <object class="footer-icons__svg" type="image/svg+xml" data="img/standard-chartered.svg" width="100%" height="100%">
+            <object class="footer-icons__logo" type="image/svg+xml" data="img/logo-salons-secret.svg" width="100px" height="40px">
             </object>
         </div>
         <div class="copyright">
@@ -404,6 +412,7 @@ const footerList7 = [
         <li class="breadcrumbs__link"><a href="#">Политика обработки персональных данных</a></li>
     </ul>
     </div>
+</div>
 </footer>
 
 
