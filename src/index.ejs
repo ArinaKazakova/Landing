@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="header-logo">
+        <div class="header-logo__container">
+            <object class="header-logo__svg" type="image/svg+xml" data="img/logo.svg" width="20%" height="20px">
+            </object>
+            <object class="header-logo__svg" type="image/svg+xml" data="img/logo.svg" width="20%" height="20px">
+            </object>
+        </div>
+
+
+    </div>
+
+    <%
+    const menuItems = [
+        {title: 'Акции', link: '#', id: ''},
+        {title: 'Уход за волосами', link: '#', id: ''},
+        {title: 'Стайлинг', link: '#', id: ''},
+        {title: 'Мир Redken', link: '#', id: ''},
+        {title: 'Найти салон', link: 'https://www.google.com/maps/search/?api=1&query=centurylink+field', id: 'location-link'}
+
+    ];
+    %>
+    <nav class="header-menu">
+        <div class="header-menu__block">
+            <input type="checkbox" id="toggle-menu">
+            <label class="header-menu__toggle" for="toggle-menu"> </label>
+        </div>
+        <ul class="header-menu__list">
+            <% menuItems.forEach((item) => { %>
+                <li class="header-menu__item"><a id="<%= item.id; %>" class="header-menu__link"
+                                                 href="<%= item.link; %>"><%= item.title %></a></li>
+            <% }) %>
+        </ul>
+    </nav>
+
+    <%
+    const menuIcons = [
+        {data: 'img/avatar.svg', link: '#', title: ''},
+        {data: 'img/location.svg', link: '#', title: 'location'},
+        {data: 'img/search.svg', link: '#', title: 'search'},
+        {data: 'img/shopping-bag.svg', link: '#', title: ''},
+        {data: 'img/phone-receiver.svg', link: '#', title: 'phone'},
+        {data: 'img/mail.svg', link: '#', title: 'mail'}
+    ];
+    %>
+
+    <ul class="header-icons">
+        <% menuIcons.forEach((icon) => { %>
+            <li id="<%= icon.title; %>" class="header-icons__item">
+                <a class="header-icons__link" href="#">
+                    <object class="header-icons__svg" type="image/svg+xml" data="<%= icon.data; %>" width="100%"
+                            height="100%">
+
+                    </object>
+
+                </a>
+            </li>
+        <% }) %>
+
+    </ul>
+
+    <form action="" class="search">
+        <label for="search-button"></label>
+        <input type="checkbox" id="search-button" class="search__button">
+        <label class="search__button-toggle" for="search__button"> </label>
+        <label>
+            <input class="search__field " type="text">
+        </label>
+    </form>
+
+</header>
+
+
+<section class="top-section">
+    <div class="top-section__content">
+        <div class="top-section__container">
+            <h4 class="top-section__sub">Такое нельзя пропустить!</h4>
+            <h1 class="top-section__title">Shades eq celebration</h1>
+            <p class="top-section__text">Успей попасть на самую яркую вечеринку Redken в этом году!</p>
+            <a class="top-section__link" href="#"></a>
+        </div>
+        <%
+        const firstSectionImg = [
+            {src: 'img/img1.png'},
+            {src: 'img/img2.png'},
+            {src: 'img/img3.png'}
+        ];
+        %>
+
+        <div class="section-images">
+            <% firstSectionImg.forEach((item) => { %>
+                <img class="section-images__item" src="<%= item.src; %>" alt="">
+            <% }) %>
+        </div>
+    </div>
+</section>
+<section class="second-section">
+    <div class="second-section__content">
+        <div class="second-section__container">
+
+            <h2 class="second-section__title">Shades eq celebration</h2>
+            <p class="second-section__text">Празднование успеха и популярности легендарного красителя <b>Shades EQ!</b>
+            </p>
+            <h5 class="second-section__sub">Что</h5>
+
+            <ul class="second-section__list">
+                <li class="second-section__item">
+                    <span class="second-section__item-span">Креативное пространство, посвященное СУПЕРГЕРОЮ окрашивания  <b>Shades EQ</b></span>
+                </li>
+                <li class="second-section__item">
+                    <span class="second-section__item-span">Мастер-классы от амбассадоров бренда</span>
+                </li>
+                <li class="second-section__item">
+                    <span class="second-section__item-span">Интерактивные фотозоны</span>
+                </li>
+                <li class="second-section__item">
+                    <span class="second-section__item-span">Драйвовые диджеи</span>
+                </li>
+                <li class="second-section__item">
+                    <span class="second-section__item-span">Сюрпризы и подарки от бренда</span>
+                </li>
+            </ul>
+        </div>
+        <div class="section-form">
+            <h5 class="section-form__title ">Где</h5>
+            <form class="section-form__item" action="" method="post" name="form">
+                <select class="section-form__list" name="list">
+                    <option>Москва</option>
+                    <option>Санкт-Петербург</option>
+                </select>
+            </form>
+            <h5 class="section-form__title ">Дата</h5>
+            <h1 class="section-form__text ">19 сентября</h1>
+            <h5 class="section-form__title ">Время</h5>
+            <h1 class="section-form__text ">19:00</h1>
+            <a class="top-section__link top-section__link_display " href="#"></a>
+
+        </div>
+        <%
+        const secondSectionImg = [
+            {src: 'img/girl1.png'},
+            {src: 'img/bottle2.png'},
+            {src: 'img/bottle3.png'},
+            {src: 'img/girl.png'},
+            {src: 'img/ny.png'}
+        ];
+        %>
+        <div class="second-section-img">
+            <% secondSectionImg.forEach((item) => { %>
+                <img class="second-section-img__item" src="<%= item.src; %>" alt="">
+            <% }) %>
+        </div>
+        <div class="section-service">
+
+            <div class="section-service__element">
+                <object class="section-service__item section-service__item__resize" type="image/svg+xml"
+                        data="img/ticket.svg">
+                </object>
+                <p class="section-service__text">Оплатить бронь вы можете <b>в течении 2х дней </b></p>
+            </div>
+            <div class="section-service__element">
+                <object class="section-service__item" type="image/svg+xml" data="img/letter.svg">
+                </object>
+                <p class="section-service__text">Билет придет вам на почту
+                    в течении 1 часа после оплаты </p>
+            </div>
+            <div class="section-service__element">
+                <object class="section-service__item" type="image/svg+xml" data="img/sphere.svg">
+                </object>
+                <p class="section-service__text">бронирование и оплата
+                    билетов осуществляется
+                    после авторизации
+                    на сайте <b><a href="#">beautyid.pro</a></b></p>
+            </div>
+
+            <div class="section-service__element">
+                <object class="section-service__item " type="image/svg+xml" data="img/phone.svg">
+                </object>
+                <p class="section-service__text">по всем вопросам,
+                    вы можете обратиться в колл центр: <br> <b>8 800 500 83 48</b>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%
+const footerList1 = [
+    {text: 'All soft & all soft mega', link: '#'},
+    {text: 'High rise volume', link: '#'},
+    {text: 'Beach envy volume', link: '#'},
+    {text: 'Curvaceus', link: '#'},
+    {text: 'Scalp relief', link: '#'},
+    {text: 'Color extend magnetics', link: '#'},
+    {text: 'Frizz dismiss', link: '#'},
+    {text: 'Extreme', link: '#'},
+    {text: 'Extreme lengths', link: '#'},
+    {text: 'blow dry', link: '#'},
+    {text: 'heatcure', link: '#'},
+    {text: 'ph-bonder', link: '#'},
+    {text: 'diamond oil glow dry', link: '#'},
+    {text: 'clean maniac micellar', link: '#'},
+    {text: 'color extend blondage', link: '#'}
+];
+
+const footerList2 = [
+    {text: 'Лак для фиксации', link: '#'},
+    {text: 'Спрей для укладки', link: '#'},
+    {text: 'Термозащита', link: '#'},
+    {text: 'Гель', link: '#'},
+    {text: 'Воск', link: '#'},
+    {text: 'Глина', link: '#'},
+    {text: 'Лосьон', link: '#'},
+    {text: 'Паста', link: '#'},
+    {text: 'Пенка', link: '#'},
+    {text: 'Крем', link: '#'},
+    {text: 'Пудра', link: '#'},
+    {text: 'Сушка без фена', link: '#'}
+];
+
+const footerList3 = [
+    {text: 'Восстановить окрашенные волосы', link: '#'},
+    {text: 'Защита цвета волос', link: '#'},
+    {text: 'Идеальный блонд без желтизны', link: '#'},
+    {text: 'Восстановление осветленных волос', link: '#'},
+    {text: 'Сохранить блонд', link: '#'},
+    {text: 'Увеличить объем и густоту волос', link: '#'},
+    {text: 'Придать волосам сияние и блеск', link: '#'},
+    {text: 'Питание и увлажнение волос', link: '#'},
+    {text: 'Послушные и мягкие волосы', link: '#'},
+    {text: 'Придать волосам силу', link: '#'},
+    {text: 'Укрепление и восстановление волос', link: '#'},
+    {text: 'Для ежедневного применения', link: '#'}
+];
+
+const footerList4 = [
+    {text: 'Clean mania micellar', link: '#'},
+    {text: 'Ph bonder', link: '#'},
+    {text: 'Heatcure', link: '#'},
+    {text: 'Маски с двойной формулой Mega mask', link: '#'},
+    {text: 'Diamond oil glow dry', link: '#'}
+
+];
+
+const footerList5 = [
+    {text: 'cerafill defy', link: '#'},
+    {text: 'cerafill retaliate', link: '#'},
+    {text: 'cerafill maximize', link: '#'}
+];
+const footerList6 = [
+    {text: 'Мужской шампунь для волос', link: '#'},
+    {text: 'Мужской стайлинг', link: '#'},
+    {text: 'Средства для бритья', link: '#'}
+];
+
+const footerList7 = [
+    {text: 'О нас', link: '#'},
+    {text: 'Связаться с нами', link: '#'}
+];
+%>
+
+<footer class="footer">
+
+    <div class="footer-list">
+        <h4 class="footer-list__title">Уход за волосами</h4>
+        <ul class="footer-list__container">
+            <% footerList1.forEach((item) => { %>
+                <li class="footer-list__item"><a class="footer-list__link" href="#"><%= item.text %></a></li>
+            <% }) %>
+        </ul>
+    </div>
+    <div class="footer-list">
+        <h4 class="footer-list__title">Стайлинг</h4>
+        <ul class="footer-list__container">
+            <% footerList2.forEach((item) => { %>
+                <li class="footer-list__item"><a class="footer-list__link" href="#"><%= item.text %></a></li>
+            <% }) %>
+        </ul>
+    </div>
+    <div class="footer-list">
+        <h4 class="footer-list__title">Желаемый результат</h4>
+        <ul class="footer-list__container">
+            <% footerList3.forEach((item) => { %>
+                <li class="footer-list__item"><a class="footer-list__link" href="#"><%= item.text %></a></li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <div class="footer-list">
+        <h4 class="footer-list__title">Новинки</h4>
+        <ul class="footer-list__container">
+            <% footerList4.forEach((item) => { %>
+                <li class="footer-list__item"><a class="footer-list__link" href="#"><%= item.text %></a></li>
+            <% }) %>
+        </ul>
+
+        <h4 class="footer-list__title">Система ухода Cerafill</h4>
+        <ul class="footer-list__container">
+            <% footerList5.forEach((item) => { %>
+                <li class="footer-list__item"><a class="footer-list__link" href="#"><%= item.text %></a></li>
+            <% }) %>
+        </ul>
+        <h4 class="footer-list__title">Для мужчин</h4>
+        <ul class="footer-list__container">
+            <% footerList6.forEach((item) => { %>
+                <li class="footer-list__item"><a class="footer-list__link" href="#"><%= item.text %></a></li>
+            <% }) %>
+        </ul>
+    </div>
+    <div class="footer-list">
+        <h4 class="footer-list__title">Компания Redken</h4>
+        <ul class="footer-list__container">
+            <% footerList7.forEach((item) => { %>
+                <li class="footer-list__item"><a class="footer-list__link" href="#"><%= item.text %></a></li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <div class="footer-list footer-list_showed">
+        <h4 class="footer-list__title footer-list_hide">Следите за нами</h4>
+
+        <ul class="footer-icons footer-list_hide">
+            <li class="footer-icons__item">
+                <a class="footer-icons__link" href="#">
+                    <object class="footer-icons__svg" type="image/svg+xml" data="img/instagram.svg" width="30px"
+                            height="40px">
+
+                    </object>
+                </a>
+            </li>
+            <li class="footer-icons__item">
+                <a class="footer-icons__link" href="#">
+                    <object class="footer-icons__svg" type="image/svg+xml" data="img/facebook.svg" width="30px"
+                            height="40px">
+                    </object>
+                </a>
+            </li>
+        </ul>
+        <h4 id="subscribe-title" class="footer-list__title">Подпишитесь на новости</h4>
+
+        <form class="footer-form" action="">
+            <input class="footer-form__input" type="text" maxlength="25" size="40" value="Ваш e-mail">
+            <input class="footer-form__button" type="button">
+            <label class="footer-form__label" for="subscribe-check">Я работаю с Redken</label><Br>
+            <input id="subscribe-check" class="footer-form__checkbox" type="checkbox" name="a" >
+            <p class="footer-form__text" >Подписаться на рассылку от Redken</p>
+
+        </form>
+        <h4 class="footer-list__title footer-list_hide">Способ оплаты</h4>
+        <div class="footer-pay footer-list_hide">
+            <object class="footer-pay__svg" type="image/svg+xml" data="img/visa.svg" width="50px" height="50px">
+
+            </object>
+            <object class="footer-pay__svg" type="image/svg+xml" data="img/mastercard.svg" width="50px" height="50px">
+
+            </object>
+            <object class="footer-pay__svg" type="image/svg+xml" data="img/visa.svg" width="50px" height="50px">
+
+            </object>
+            <object class="footer-pay__svg" type="image/svg+xml" data="img/visa.svg" width="50px" height="50px">
+
+            </object>
+        </div>
+
+        <div class="footer-list__number">
+            <h4 class="footer-list__title footer-list_resize">Горячая линия:</h4>
+            <div class="footer-list__numb">
+                <p>8 800 500 83 48</p>
+                <p>+7 495 646 91 01</p>
+            </div>
+
+        </div>
+
+        <div class="footer-icons footer-icons_indent">
+            <object class="footer-icons__svg" type="image/svg+xml" data="img/western-union.svg" width="100%" height="100%">
+            </object>
+            <object class="footer-icons__svg" type="image/svg+xml" data="img/standard-chartered.svg" width="100%" height="100%">
+            </object>
+        </div>
+        <div class="copyright">
+            <p class="copyright__text">&#169; Redken. 1960 - 2018</p>
+            <a class="copyright__sub" href="#">Пользовательское соглашение</a>
+        </div>
+
+    </div>
+    <div class="breadcrumbs">
+    <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__link"><a href="#">Доставка</a></li>
+        <li class="breadcrumbs__link"><a href="#">Оплата</a></li>
+        <li class="breadcrumbs__link"><a href="#">Связаться с нами</a></li>
+        <li class="breadcrumbs__link"><a href="#">Правовая информация</a></li>
+        <li class="breadcrumbs__link"><a href="#">Частые ворпосы</a></li>
+        <li class="breadcrumbs__link"><a href="#">Политика обработки персональных данных</a></li>
+    </ul>
+    </div>
+</footer>
+
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
