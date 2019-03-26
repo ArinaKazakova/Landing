@@ -1,10 +1,10 @@
+$(document).ready(function() {
 
-
-    if(document.documentElement.clientWidth < 768) {
+    if (document.documentElement.clientWidth < 768) {
         $('.header-menu__list').hide();
-        $('.header-menu__block').on('click' , function (){
-            $('.header-menu__list').slideToggle();
-        }
+        $('.header-menu__block').on('click', function () {
+                $('.header-menu__list').slideToggle();
+            }
         );
         $('.top-section__link').html('Купить билет!');
         $('#subscribe-title').html('Подпишитесь на уникальные предложения');
@@ -12,7 +12,7 @@
         $('.footer-list_resize').html('Служба поддержки');
     }
 
-    if(document.documentElement.clientWidth > 760) {
+    if (document.documentElement.clientWidth > 760) {
 
         $('.top-section__link').html('Забронировать билет!');
         $('.footer-form__button').prop('value', '');
@@ -20,7 +20,7 @@
 
     }
 
-    if(document.documentElement.clientWidth < 1400){
+    if (document.documentElement.clientWidth < 1400) {
         $('.footer-form__button').prop('value', 'Ok');
     }
 
@@ -30,6 +30,7 @@
 
     });
 
-    $('#location-link , #location').attr('data-fancybox','').attr('data-option','{&quot;iframe&quot; : {&quot;css&quot; : {&quot;width&quot; : &quot;80%&quot;, &quot;height&quot; : &quot;80%&quot;}}}' );
+    $('#location-link , #location').attr('data-fancybox', '').attr('data-option', '{&quot;iframe&quot; : {&quot;css&quot; : {&quot;width&quot; : &quot;80%&quot;, &quot;height&quot; : &quot;80%&quot;}}}');
     $('b').css('color', '#F59BBB');
 
+});

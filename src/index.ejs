@@ -5,9 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css"/>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <title>Redken</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
 </head>
@@ -28,10 +27,10 @@
 
     <%
     const menuItems = [
-        {title: 'Акции', link: '#', id: ''},
-        {title: 'Уход за волосами', link: '#', id: ''},
-        {title: 'Стайлинг', link: '#', id: ''},
-        {title: 'Мир Redken', link: '#', id: ''},
+        {title: 'Акции', link: '#', id: 'event'},
+        {title: 'Уход за волосами', link: '#', id: 'upkeep'},
+        {title: 'Стайлинг', link: '#', id: 'styling'},
+        {title: 'Мир Redken', link: '#', id: 'redken'},
         {title: 'Найти салон', link: 'https://www.google.com/maps/search/?api=1&query=centurylink+field', id: 'location-link'}
 
     ];
@@ -64,11 +63,7 @@
         <% menuIcons.forEach((icon) => { %>
             <li id="<%= icon.title; %>" class="header-icons__item">
                 <a class="header-icons__link" href="#">
-                    <object class="header-icons__svg" type="image/svg+xml" data="<%= icon.data; %>" width="100%"
-                            height="100%">
-
-                    </object>
-
+                    <img class="header-icons__svg" src="<%= icon.data; %>" alt="">
                 </a>
             </li>
         <% }) %>
@@ -178,7 +173,7 @@
                 <object class="section-service__item" type="image/svg+xml" data="img/letter.svg">
                 </object>
                 <p class="section-service__text">Билет придет вам на почту
-                    в течении 1 часа после оплаты </p>
+                    в течение 1 часа после оплаты </p>
             </div>
             <div class="section-service__element">
                 <object class="section-service__item" type="image/svg+xml" data="img/sphere.svg">
@@ -355,7 +350,7 @@ const footerList7 = [
         <h4 id="subscribe-title" class="footer-list__title">Подпишитесь на новости</h4>
 
         <form class="footer-form" action="">
-            <input class="footer-form__input" type="text" maxlength="25" size="40" value="Ваш e-mail">
+            <input class="footer-form__input" type="email" maxlength="25" size="40"  placeholder="Ваш e-mail">
             <input class="footer-form__button" type="button">
             <label class="footer-form__label" for="subscribe-check">Я работаю с Redken</label><Br>
             <input id="subscribe-check" class="footer-form__checkbox" type="checkbox" name="a" >
@@ -412,9 +407,8 @@ const footerList7 = [
 </footer>
 
 
-<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script src="js/scripts.js"></script>
 </body>
 </html>
