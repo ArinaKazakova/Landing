@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     if (document.documentElement.clientWidth < 768) {
         $('.header-menu__list').hide();
-        $('.header-menu__block').on('click', function () {
+        $('.header-menu__toggle').on('click', function () {
             $('.header-menu__list').slideToggle();
         }
         );
